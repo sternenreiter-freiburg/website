@@ -1,1 +1,527 @@
-<h1>Hello World</h1>
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kindertagespflege Sternenreiter – Großtagespflege in Freiburg-Zähringen</title>
+<meta name="description" content="Großtagespflege in Freiburg-Zähringen für Kinder ab 10 Monaten: beobachtetes Freispiel, Naturerfahrung, Kreativität und tiergestützte Pädagogik.">
+<meta name="theme-color" content="#27357a">
+<link rel="icon" type="image/png" href="logo-mark.png"><style>
+:root{--night:#27357a;--deep:#1b2461;--star:#f6dd3b;--moon:#fff6bf;--mist:#eef1fb;--ink:#1c2340;--muted:#4b5478;
+--serif:"Palatino Linotype",Palatino,"Book Antiqua","URW Palladio L",Georgia,serif;
+--sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:7rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font:1.0625rem/1.65 var(--sans);color:var(--ink);background:#fff}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--night)}
+:focus-visible{outline:3px solid var(--night);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--star);color:var(--deep);padding:.6rem 1rem;z-index:100}
+.skip:focus{left:0}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+
+/* Kopf */
+.top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #dfe3f3}
+.top .wrap{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;padding-block:.6rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--night);font:600 1.3rem/1 var(--serif)}
+.brand img{width:42px;height:42px}
+.brand small{display:block;margin-top:.2rem;font:500 .78rem/1 var(--sans);color:var(--muted)}
+.top nav{margin-left:auto;display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:none}
+.top nav a{white-space:nowrap;text-decoration:none;color:var(--ink);padding:.45rem .8rem;border-radius:99px;font-size:.95rem}
+.top nav a:hover{background:var(--moon)}
+.top nav a.cta{background:var(--star);color:var(--deep);font-weight:600}
+
+/* Hero */
+.hero{position:relative;background:var(--night);color:#fff;overflow:hidden;padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(5.5rem,10vw,8.5rem)}
+.hero::after{content:"";position:absolute;left:-10%;right:-10%;bottom:-1px;height:clamp(45px,8vw,100px);background:var(--moon);border-radius:50% 50% 0 0/100% 100% 0 0}
+.stars{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+#egg{pointer-events:auto;cursor:pointer;transform-box:fill-box;transform-origin:center;transition:transform .3s cubic-bezier(.3,1.6,.5,1),filter .3s;-webkit-tap-highlight-color:transparent}
+#egg.go{transform:scale(3) rotate(360deg)!important;filter:drop-shadow(0 0 8px #fff3a0);transition:transform .7s ease-in,filter .7s}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero h1{margin:0;font:600 clamp(2.7rem,7.2vw,4.9rem)/1 var(--serif)}
+.hero h1 span{display:block}
+.hero h1 .k{color:var(--star);font-size:.62em;margin-top:.18em}
+.hero p{max-width:34rem;margin:1.4rem 0 1.8rem;font-size:1.2rem;color:#e2e6ff}
+.btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:99px;font-weight:600;text-decoration:none;border:2px solid var(--star);background:var(--star);color:var(--deep)}
+.btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn:hover{filter:brightness(1.06)}
+.orb{position:relative;justify-self:center;width:min(100%,430px);aspect-ratio:1}
+.orb .main{width:100%;height:100%;border-radius:50%;object-fit:cover;border:10px solid var(--star)}
+.orb .small{position:absolute;left:-7%;bottom:0;width:36%;height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;border:6px solid #fff}
+
+.facts{background:var(--moon)}
+.facts ul{list-style:none;margin:0;padding:.4rem 0 2.2rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 3.5rem;text-align:center}
+.facts strong{display:block;font:600 1.5rem/1.2 var(--serif);color:var(--night)}
+.facts span{font-size:.95rem;color:var(--muted)}
+
+/* Abschnitte */
+.sec{padding:clamp(3rem,7vw,5.5rem) 0}
+.sec.mist{background:var(--mist)}
+.sec.night{background:var(--night);color:#fff}
+.sec.yellow{background:var(--star);color:var(--deep)}
+h2{display:flex;align-items:center;gap:.6rem;margin:0 0 1.3rem;font:600 clamp(1.9rem,4vw,2.7rem)/1.15 var(--serif);color:var(--night)}
+h2 svg{flex:none;width:.65em;height:.65em;fill:var(--star);stroke:var(--night);stroke-width:1.4px}
+.night h2,.yellow h2{color:inherit}
+.night h2 svg{stroke:none}
+.yellow h2 svg{fill:#fff}
+h3{margin:0 0 .35rem;font:600 1.25rem/1.3 var(--serif);color:var(--night)}
+.night h3{color:#fff}
+p{margin:0 0 1rem;max-width:42rem}
+.lead-in{max-width:42rem;font-size:1.15rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+blockquote{margin:0 0 1.5rem;padding-left:1.2rem;border-left:5px solid var(--star);font:italic 500 1.55rem/1.4 var(--serif);color:var(--night)}
+blockquote cite{display:block;margin-top:.6rem;font:500 .95rem var(--sans);font-style:normal;color:var(--muted)}
+.team{position:relative;margin:0 0 1.6rem}
+.team img{width:100%;height:auto;aspect-ratio:5/4;object-fit:cover;object-position:50% 38%;border-radius:28px;border:8px solid var(--star);box-shadow:0 18px 40px -22px rgba(27,36,97,.55)}
+.team figcaption{position:absolute;left:50%;bottom:-.9rem;translate:-50% 0;white-space:nowrap;background:var(--night);color:#fff;font:600 .9rem/1 var(--sans);padding:.6rem 1rem;border-radius:99px}
+.team svg{position:absolute;right:-.9rem;top:-.9rem;width:3rem;height:3rem;fill:var(--star);stroke:var(--night);stroke-width:1.2px;rotate:12deg}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2.2rem}
+.person p{margin:0}
+.role{font-size:.9rem;color:var(--muted)}
+.note{background:var(--moon);border-radius:22px;padding:1.2rem 1.4rem;margin-top:1.5rem}
+.note p:last-child{margin:0}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem 3rem}
+.grid2>div{border-top:2px solid var(--star);padding-top:.9rem}
+.grid2 p{margin:0}
+.sub{margin:3.2rem 0 0;font:600 1.5rem var(--serif);color:var(--night)}
+.focus{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center;margin-top:2.5rem}
+.focus.rev{grid-template-columns:1fr minmax(0,300px)}
+.focus.rev .pic{order:2}
+.focus .pic img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%}
+.focus p{margin:0}
+.box{background:var(--moon);border-radius:26px;padding:clamp(1.4rem,3vw,2.2rem);margin-top:3.2rem;display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.box p{margin:0}
+
+.alltag{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.timeline{list-style:none;margin:1.5rem 0 0;padding:0 0 0 .2rem;border-left:3px solid var(--night)}
+.timeline li{position:relative;padding:0 0 1.3rem 1.7rem}
+.timeline li::before{content:"";position:absolute;left:-11px;top:.4rem;width:17px;height:17px;border-radius:50%;background:var(--star);border:3px solid var(--night)}
+.timeline time{margin-right:.5rem;font:600 1.05rem var(--serif);color:var(--night);font-variant-numeric:tabular-nums}
+.timeline b{font-weight:600}
+.timeline p{margin:.1rem 0 0;color:var(--muted)}
+.seasons{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.seasons figure{margin:0;text-align:center}
+.seasons img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid #fff}
+.seasons figcaption{margin-top:.4rem;font:600 1rem var(--serif);color:var(--night)}
+dl{margin:0}
+dt{font-weight:600;color:var(--night)}
+dd{margin:0 0 .9rem;max-width:40rem}
+
+.raeume{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.arch img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 28px 28px}
+ul.dots{list-style:none;margin:0 0 1rem;padding:0}
+ul.dots li{position:relative;padding-left:1.4rem;margin-bottom:.5rem;max-width:40rem}
+ul.dots li::before{content:"";position:absolute;left:0;top:.6em;width:.6rem;height:.6rem;border-radius:50%;background:var(--star);box-shadow:0 0 0 2px var(--night)}
+.night ul.dots li::before{box-shadow:none}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2.2rem}
+.step{border-top:4px solid var(--star);padding-top:.9rem}
+.step .when{margin:0 0 .2rem;color:var(--star);font-weight:600}
+.step p{margin:0;color:#e2e6ff}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+
+.contact{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.card{background:#fff;border-radius:26px;padding:1.7rem;color:var(--ink)}
+.card p{margin:0 0 .8rem}
+.yellow a{color:var(--deep)}
+.big{font:600 1.15rem var(--serif)}
+
+footer{background:var(--deep);color:#dfe4ff;padding:2.5rem 0 3rem}
+footer a{color:#fff}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;align-items:center;margin-bottom:2rem}
+.legal{border-top:1px solid rgba(255,255,255,.2);padding-top:1.4rem;margin-top:1.4rem;font-size:.95rem}
+.legal h2{font:600 1.2rem var(--serif);color:#fff;margin-bottom:.6rem}
+
+/* Neu: Foto-Reihen, Schätzen-Liste, FAQ, Galerie */
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem;margin-top:1.8rem}
+.gal img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid var(--moon)}
+.gal figure{margin:0}
+.minis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin-top:1rem}
+.minis img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:4px solid #fff}
+.round{width:min(100%,240px);margin-top:1.2rem}
+.round img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;border:5px solid var(--star)}
+.schaetzen{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.schaetzen li{background:var(--moon);border-radius:22px;padding:1.1rem 1.2rem 1.2rem}
+.schaetzen svg{width:1.15rem;height:1.15rem;fill:var(--star);stroke:var(--night);stroke-width:1.4px;margin-bottom:.35rem}
+.schaetzen b{display:block;font:600 1.08rem/1.3 var(--serif);color:var(--night);margin-bottom:.2rem}
+.schaetzen span{display:block;font-size:.98rem;color:var(--muted)}
+.faq{max-width:52rem;margin-top:1.6rem}
+.faq details{background:#fff;border:2px solid var(--night);border-radius:22px;margin-bottom:.8rem;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:1rem 3.2rem 1rem 1.3rem;position:relative;font:600 1.12rem/1.35 var(--serif);color:var(--night)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);width:1.7rem;height:1.7rem;border-radius:50%;background:var(--star);color:var(--deep);display:grid;place-items:center;font:600 1.2rem/1 var(--sans)}
+.faq details[open] summary::after{content:"–"}
+.faq details[open]{background:var(--moon)}
+.faq details p{margin:0;padding:0 1.3rem 1.2rem;max-width:none}
+
+@media (max-width:900px){
+  .hero .wrap,.two,.alltag,.raeume,.focus,.focus.rev,.box,.contact{grid-template-columns:1fr}
+  .grid2,.cols3,.people{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .focus .pic,.orb{max-width:300px}
+  .focus.rev .pic{order:0}
+  .arch{max-width:340px}
+  .top nav{margin-left:0;width:100%}
+  .gal{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .schaetzen{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:900px){.stars{opacity:.28}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.orb{justify-self:start;margin-left:1rem}.gal{grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}.schaetzen{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star" viewBox="0 0 24 24"><polygon points="12,1.5 14.9,8.6 22.5,9.1 16.7,14 18.6,21.5 12,17.4 5.4,21.5 7.3,14 1.5,9.1 9.1,8.6"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#start"><img src="logo-mark.png" alt="" width="42" height="42"><span>Sternenreiter<small>Kindertagespflege</small></span></a>
+    <nav aria-label="Hauptmenü">
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#paedagogik">Pädagogik</a>
+      <a href="#alltag">Alltag</a>
+      <a href="#raeume">Räume &amp; Lage</a>
+      <a href="#eingewoehnung">Eingewöhnung</a>
+      <a href="#eltern">Eltern</a>
+      <a href="#fragen">Fragen</a>
+      <a href="#kontakt" class="cta">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+<section class="hero" id="start">
+  <svg class="stars" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <use href="#star" x="80" y="60" width="26" height="26" fill="#f6dd3b"/>
+    <use href="#star" x="520" y="30" width="14" height="14" fill="#fff"/>
+    <g id="egg"><circle cx="650" cy="130" r="24" fill="transparent" pointer-events="all"/><use href="#star" x="640" y="120" width="20" height="20" fill="#f6dd3b"/></g>
+    <use href="#star" x="30" y="300" width="14" height="14" fill="#fff"/>
+    <use href="#star" x="1120" y="70" width="18" height="18" fill="#fff"/>
+    <use href="#star" x="980" y="20" width="30" height="30" fill="#f6dd3b"/>
+    <use href="#star" x="1150" y="330" width="14" height="14" fill="#f6dd3b"/>
+    <use href="#star" x="380" y="480" width="12" height="12" fill="#fff"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <h1><span>Sternenreiter</span> <span class="k">Kindertagespflege</span></h1>
+      <p>Eine Großtagespflege in Freiburg-Zähringen. Wir geben Kindern ab 10 Monaten einen sicheren, liebevollen Ort, an dem sie in ihrem eigenen Tempo die Welt entdecken.</p>
+      <div class="btns">
+        <a class="btn" href="#kontakt">Kontakt aufnehmen</a>
+        <a class="btn ghost" href="#paedagogik">Unser Konzept</a>
+      </div>
+    </div>
+    <div class="orb">
+      <img src="1.jpeg" class="main" alt="Bunte Schmetterlinge aus Papierrollen hängen an einem Zweig, dahinter Raupen an der Wand" width="1200" height="1600" decoding="async">
+      <img src="4.jpeg" class="small" alt="Rote und rosa Tulpen in einer blauen Vase" width="1200" height="1600" decoding="async" style="object-position:center 55%">
+    </div>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap">
+    <ul>
+      <li><strong>bis zu 10</strong><span>Kinder gleichzeitig</span></li>
+      <li><strong>Mo–Fr, 8–14 Uhr</strong><span>Betreuungszeit</span></li>
+      <li><strong>seit 2015</strong><span>in Zähringen</span></li>
+    </ul>
+  </div>
+</div>
+
+<section class="sec" id="ueber-uns">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Über uns</h2>
+    <div class="two">
+      <div>
+        <blockquote>Das Leben anzuregen – und es sich dann frei entwickeln zu lassen – hier liegt die erste Aufgabe des Erziehers.<cite>Maria Montessori</cite></blockquote>
+        <p>Wir bieten Kindern einen sicheren und liebevollen Rahmen, in dem sich jedes in seinem eigenen Tempo entwickeln kann. Im Mittelpunkt steht das beobachtete Freispiel, dazu kommen Kreativität sowie Erfahrungen mit Tieren und Natur. Mit den Eltern verstehen wir uns als Erziehungspartner. Für das Kind möchten wir wie eine Erweiterung der Familie sein: ein Ort, an dem es angenommen und geborgen ist.</p>
+      </div>
+      <div>
+        <figure class="team">
+          <img src="team.jpeg" alt="Daniela Brekalo und Najat Zarouali lächeln gemeinsam in die Kamera, hinter ihnen ein gemalter Wald" width="1200" height="1600" loading="lazy" decoding="async">
+          <svg aria-hidden="true"><use href="#star"/></svg>
+          <figcaption>Daniela (links) und Najat (rechts)</figcaption>
+        </figure>
+        <div class="people">
+        <div class="person">
+          <div><h3>Daniela Brekalo</h3><p class="role">Tagesmutter</p><p>Hat Geschichte, Deutsch und Latein studiert und ist Fremdsprachenkorrespondentin. Verheiratet, Mutter von zwei Töchtern. Leseratte und kreativer Kopf der Sternenreiter.</p></div>
+        </div>
+        <div class="person">
+          <div><h3>Najat Zarouali</h3><p class="role">Tagesmutter</p><p>Hat marokkanische Wurzeln und ist gelernte Einzelhandelskauffrau. Verheiratet, Mutter von drei Kindern. Mit ihrer besonnenen, humorvollen Art ist sie der Ruhepol im Team: sanft, aber bestimmt, und organisatorisch unersetzlich.</p></div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="note">
+      <p>Wir kennen uns seit der Kindergartenzeit unserer ältesten Töchter und haben uns gemeinsam im Elternbeirat engagiert, zum Beispiel für qualifizierten Islamunterricht an der Tulla-Grundschule. Toleranz, Akzeptanz und Respekt sind Werte, die wir teilen. Im Frühjahr 2015 haben wir uns zur Großtagespflege Sternenreiter zusammengeschlossen.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec mist" id="paedagogik">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Pädagogik</h2>
+    <blockquote>Wesentlich ist, dass das Kind möglichst viele Dinge selbst entdeckt.<cite>Emmi Pikler</cite></blockquote>
+    <p class="lead-in">Wir orientieren uns an Emmi Pikler, Maria Montessori und der Naturpädagogik. Das Kind ist von Natur aus neugierig und möchte die Welt begreifen.</p>
+    <div class="grid2" style="margin-top:2rem">
+      <div><h3>Jedes Kind ist einzigartig</h3><p>Jedes Kind hat sein eigenes Tempo. Es ist von Anfang an ein vollwertiger Mensch, kein kleiner Erwachsener.</p></div>
+      <div><h3>Respekt im Umgang</h3><p>Wir sprechen wertschätzend mit den Kindern. Sie dürfen eine eigene Meinung haben, Vorlieben und Abneigungen.</p></div>
+      <div><h3>Beobachten statt bewerten</h3><p>Wir schauen wohlwollend hin und finden heraus, wofür sich ein Kind interessiert. Wir vergleichen Kinder nie miteinander.</p></div>
+      <div><h3>Konflikte selbst lösen</h3><p>Wir greifen so wenig wie möglich ein. Wer einen Streit selbst löst, gewinnt Selbstwertgefühl.</p></div>
+    </div>
+
+    <h3 class="sub">Unsere Schwerpunkte</h3>
+    <div class="focus">
+      <div class="pic"><img src="35.jpeg" alt="Spielzeug-Dinosaurier auf der Fensterbank, dahinter Tannen aus Transparentpapier" width="1200" height="1600" loading="lazy" decoding="async"></div>
+      <div><h3>Beobachtetes Freispiel</h3><p>In einer vorbereiteten, reizarmen Umgebung entscheiden die Kinder selbst, womit und wie lange sie spielen. Wir bannen ernste Gefahrenquellen und beobachten.</p></div>
+    </div>
+    <div class="focus rev">
+      <div class="pic"><img src="8.jpeg" alt="Bewegungsbereich mit Matten, Tunnel, Fußspuren aus Holz und bunten Steinen" width="1200" height="1600" loading="lazy" decoding="async"></div>
+      <div><h3>Bewegung und Motorik</h3><p>Kletterdreiecke, Kletterbögen, Hühnerleitern, Rutschbrett und Wippen: Die Kinder üben Koordination, schätzen ihre Kräfte ein und lernen ihre Grenzen kennen. Das senkt auch die Verletzungsgefahr.</p></div>
+    </div>
+    <div class="focus">
+      <div class="pic"><img src="34.jpeg" alt="Holzinstrumente, Triangel und Handtrommel auf einem grauen Fell und mintgrünen Tüchern" width="1200" height="1600" loading="lazy" decoding="async"></div>
+      <div><h3>Morgenkreis und Singen</h3><p>Von der Begrüßung über Bewegungslieder bis zum Schlussspiel: Lieder, Fingerspiele und Verse passend zum Jahreskreis. Feste Regeln und Rituale sind ein bewusster Kontrapunkt zum Freispiel.</p></div>
+    </div>
+    <div class="focus rev">
+      <div class="pic"><img src="24.jpeg" alt="Eine Kinderhand druckt mit einer eingeschnittenen Papprolle Farbe auf schwarzes Papier" width="1200" height="1600" loading="lazy" decoding="async"></div>
+      <div><h3>Kreatives Gestalten</h3><p>Fingerfarben, Buntstifte und Naturmaterialien: Nicht das fertige Produkt zählt, sondern die selbstvergessene Beschäftigung mit dem Material. Anlass sind oft die Jahreszeiten und ihre Feste.</p></div>
+    </div>
+    <div class="focus">
+      <div class="pic"><img src="17.jpeg" alt="Kleiner Hund im Nikolauskostüm auf dem Spaziergang" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:center 40%"></div>
+      <div><h3>Tiere und Natur</h3><p>Unser Kitahund Kiwi ist von Anfang an dabei. So lernen die Kinder den Umgang mit Hunden und verlieren Ängste. Im Frühling beobachten wir, wie aus Raupen Schmetterlinge werden. Draußen erleben sie bei jedem Wetter die Jahreszeiten mit allen Sinnen.</p></div>
+    </div>
+
+    <div class="box">
+      <div><h3>Beobachten und Dokumentieren</h3><p>Wir halten Momente fest, außergewöhnliche wie alltägliche. Jedes gestaltete Werk wandert mit Namen und Datum in das Fach des Kindes. Zum Abschied bekommt jedes Kind seine Kunstwerke, ein Fotobuch von der Eingewöhnung bis zum Kindergarten und einen gerahmten, persönlichen Entwicklungsbrief von uns.</p></div>
+      <div><h3>Fördern und Fordern</h3><p>Ältere Kinder bekommen Aufgaben, an denen sie wachsen, etwa mehr Verantwortung beim Aufräumen. Lob und positive Bestärkung geben ihnen sichtbar Selbstvertrauen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="alltag">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Alltag</h2>
+    <div class="alltag">
+      <div>
+        <p class="lead-in">Ein vorhersehbarer Tagesablauf gibt jungen Kindern Orientierung in einer Welt, die sie erst erschließen. Er weicht deshalb kaum ab.</p>
+        <ol class="timeline">
+          <li><time>08:00 Uhr</time><b>Ankommen und Freispiel</b><p>Begrüßung an der Tür, dann spielen bis zum Morgenkreis.</p></li>
+          <li><time>09:15 Uhr</time><b>Morgenkreis</b><p>Lieder, Fingerspiele und die ersten Regeln.</p></li>
+          <li><time>09:35 Uhr</time><b>Obstfrühstück</b><p>Frisches, saisonales Obst, klein geschnitten.</p></li>
+          <li><time>10:00 Uhr</time><b>Draußenzeit</b><p>Spielplatz, Wald oder Garten, bei jedem Wetter.</p></li>
+          <li><time>11:30 Uhr</time><b>Ankommen, Wickeln, Kochen</b><p>Frische Windel für alle, dann wird das Mittagessen fertig.</p></li>
+          <li><time>12:00 Uhr</time><b>Mittagessen</b><p>Gemeinsam am Tisch.</p></li>
+          <li><time>12:30 Uhr</time><b>Bücher, Kreativzeit oder Schlaf</b><p>Vorlesen, Malen, Basteln. Wer müde ist, darf schlafen.</p></li>
+          <li><time>13:30 Uhr</time><b>Aufräumen und Verabschiedung</b><p>Die Größeren helfen mit.</p></li>
+        </ol>
+      </div>
+      <div class="seasons">
+        <figure><img src="29.jpeg" alt="Rote und weiße Tulpen im Glas, dazwischen eine kleine Blütenfee" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>Frühling</figcaption></figure>
+        <figure><img src="28.jpeg" alt="Bunter Wiesenblumenstrauß mit einer Blütenfee mit Schmetterlingsflügeln" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>Sommer</figcaption></figure>
+        <figure><img src="42.jpeg" alt="Selbstgestaltete Laterne mit schwarzen Sternen, daneben zwei Fliegenpilz-Figuren" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>Herbst</figcaption></figure>
+        <figure><img src="26.jpeg" alt="Roter Adventskalender aus Stoff mit Tannenzweigen und kleinen Bärenohren an der Wand" width="1200" height="1600" loading="lazy" decoding="async"><figcaption>Winter</figcaption></figure>
+      </div>
+    </div>
+    <div class="two" style="margin-top:3rem">
+      <div>
+        <h3>Ausflüge und Draußenzeit</h3>
+        <p>Wir machen gern Ausflüge, am liebsten ins Naturkundemuseum, in den Botanischen Garten oder in das Tiergehege Mundenhof. Wir gehen im Sommer wie im Winter nach draußen. Bitte geben Sie Ihrem Kind deshalb Gummistiefel und Matschanzug mit, die bei uns bleiben.</p>
+        <div class="round"><img src="38.jpeg" alt="Zwei Kinder in Matschhosen und Sonnenhüten gehen Hand in Hand einen Feldweg entlang" width="1200" height="1600" loading="lazy" decoding="async" style="object-position:center 60%"></div>
+      </div>
+      <div>
+        <h3>Essen und Trinken</h3>
+        <dl>
+          <dt>Obstfrühstück</dt><dd>Im wöchentlichen Wechsel bringen die Eltern einen bunten Korb mit saisonalem, regionalem Obst mit. Wir schneiden es klein und sprechen dabei schon über Vitamine und Obstsorten.</dd>
+          <dt>Mittagessen</dt><dd>Frisch von uns gekocht, saisonal, regional und in Bio-Qualität. Meist vegetarisch, gelegentlich Fisch oder Fleisch. Fleisch servieren wir nur halal.</dd>
+          <dt>Getränke</dt><dd>Wasser oder ungesüßter Früchtetee.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec mist" id="raeume">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Räume &amp; Lage</h2>
+    <div class="raeume">
+      <div class="arch"><img src="43.jpeg" alt="Heller Hauptraum mit Rutsche, Spielhaus und Pflanzen im Vordergrund" width="1200" height="1600" loading="lazy" decoding="async">
+        <div class="minis"><img src="40.jpeg" alt="Kuschelecke mit Kissen, einem Wildschwein-Plüschtier und einem Waldmotiv an der Wand" width="820" height="1000" loading="lazy" decoding="async"><img src="36.jpeg" alt="Vier Puppen sitzen auf einer Sitzbank mit bunten Kissen" width="1200" height="1600" loading="lazy" decoding="async"><img src="41.jpeg" alt="Holztisch mit Holzregenbogen und Narzissen vor einer bunten Weltkarte" width="1200" height="1600" loading="lazy" decoding="async"></div>
+      </div>
+      <div>
+        <p>Wir sind in einem freistehenden Haus an der Zähringerstraße untergebracht, mit drei Etagen und rund 200 qm Wohnraum sowie einem kleinen Garten von etwa 30 qm. Das Haus war früher der Sitz einer Bank und hat entsprechend hochwertige Bausubstanz, etwa Marmor, und eine Klimaanlage.</p>
+        <dl>
+          <dt>Foyer mit Garderobe</dt><dd>Durch Glastüren abgetrennt. Beim Bringen nimmt eine von uns Ihr Kind in Empfang, und nach dem Schließen der Tür ist der Abschied klarer und leichter.</dd>
+          <dt>Hauptraum</dt><dd>Großzügig und reizarm ausgestattet, mit Platz für Bewegung und Rollenspiel.</dd>
+          <dt>Rückzugs- und Schlafraum</dt><dd>Ein gemütlicher Ort mit Matten, Decken, Kissen, Büchern und Kuscheltieren.</dd>
+          <dt>Küche und Waschraum</dt><dd>Im Souterrain: Küche, Kinderwaschraum, Toilette, Lager und Büro.</dd>
+        </dl>
+        <p>In unseren Räumen haben wir eine Luxussituation: Ohne Enge und doch mit Nischen für Geborgenheit sind die Kinder meist ausgeglichen. Konflikte entstehen seltener, weil sie sich gut aus dem Weg gehen können.</p>
+        <h3 style="margin-top:1.8rem">Lage in Zähringen</h3>
+        <p>Zähringen ist ein gewachsener Stadtteil im Freiburger Norden mit moderner Infrastruktur, gepflegten Spielplätzen und vielen Grünflächen. Wald und Waldspielplatz sind nah, das Stadtzentrum auch.</p>
+        <ul class="dots">
+<li>Zwei Straßenbahnlinien mit Haltestellen direkt gegenüber</li><li>Parkmöglichkeiten direkt vor dem Haus, für ein unkompliziertes Bringen und Abholen</li><li>Mehrere Kindergärten und eine Grundschule in unmittelbarer Nähe</li><li>Wald und Waldspielplatz in der Nähe</li>        </ul>
+        <h3 style="margin-top:1.8rem">Für welches Alter?</h3>
+        <p>Wir finden das Alter ab 10 Monaten optimal: Die Kinder sind dem Säuglingsalter entwachsen, meist mobil, nehmen aktiv an den gemeinsamen Mahlzeiten teil und gestalten Spielplatzbesuche mit. Wenn ein Kind nach dem dritten Geburtstag noch keinen Kindergartenplatz hat, betreuen wir es weiter, geben ihm altersgerechte Aufgaben und unterstützen die Eltern bei der Suche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="impressionen">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Impressionen</h2>
+    <p class="lead-in">Ein Blick in unseren Jahreskreis: Basteln, Stempeln, Blumen und kleine Naturschätze.</p>
+    <div class="gal">
+      <figure><img src="25.jpeg" alt="Bunter Holzregenbogen mit Lichterkette, in der Mitte ein kleiner Stoffbär" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="2.jpeg" alt="Ein Kind stempelt mit einem Schwamm Farbe auf eine Raupe aus grünen Papierkreisen" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="30.jpeg" alt="Eine Kinderhand stempelt mit einem Korken bunte Farbe auf grünes Papier" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="13.jpeg" alt="Osterküken aus gerissenem Krepppapier an der Wand, darüber eine Wimpelkette" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="39.jpeg" alt="Gelbe Papierschmetterlinge mit bunten Handabdrücken, im Hintergrund ein Vogelnest mit Blütenfeen" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="33.jpeg" alt="Blick aus dem Fenster in den Garten, am Fenster eine gelbe Papiersonne" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="37.jpeg" alt="Ein Kind gestaltet ein Bild mit Blätterabdrücken auf orangem Papier" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="16.jpeg" alt="Drei Raupen aus bemalten Röhren mit Gesichtern und Fühlern" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="31.jpeg" alt="Blütenfee mit Schmetterlingsflügeln auf einem mintgrünen Tuch, daneben ein Vogelnest" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="15.jpeg" alt="Kinderhände drucken mit einem Luftballon rosa Farbe auf grünes Papier" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="32.jpeg" alt="Vogelnest mit kleinen Vögeln auf dem Tisch, dahinter Tulpen und Hyazinthen" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+      <figure><img src="5.jpeg" alt="Selbstgebastelter Apfel aus Transparentpapier vor einem Holzregenbogen" width="1200" height="1600" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec night" id="eingewoehnung">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Eingewöhnung</h2>
+    <p class="lead-in">Die Eingewöhnung ist für alle Beteiligten eine Herausforderung. Ihr Ziel ist eine stabile, tragfähige Beziehung zwischen Ihrem Kind und uns. Wir orientieren uns am „Berliner Modell“ und planen genug Zeit ein: Bis das Kind einige Stunden ohne seine Eltern bleiben mag, kann es bis zu einem Monat dauern.</p>
+    <div class="steps">
+      <div class="step"><p class="when">Tag 1 und 2</p><h3>Kennenlernen</h3><p>Die Begleitperson, meist ein Elternteil, ist etwa eine Stunde dabei, macht im Morgenkreis mit und zeigt dem Kind durch Verhalten und Sprache: Hier ist es gut.</p></div>
+      <div class="step"><p class="when">Tag 3</p><h3>Sicherer Hafen</h3><p>Die Begleitperson zieht sich im Raum zurück, bleibt für das Kind gut sichtbar und reagiert nicht auf Spielaufforderungen. Wir machen Spielangebote. Füttern und Wickeln übernehmen weiterhin Mutter oder Vater.</p></div>
+      <div class="step"><p class="when">Ab Tag 4</p><h3>Erster Abschied</h3><p>Ein kurzer Trennungsversuch: liebevoll, aber bestimmt verabschieden, das Haus verlassen und bald zurückkehren. Weinen darf sein. Lässt sich das Kind trösten und spielt es mit, ist das ein gutes Zeichen. Wenn nicht, warten wir zwei Tage ab.</p></div>
+      <div class="step"><p class="when">Nach ca. 2 Wochen</p><h3>Ganzer Betreuungstag</h3><p>Die Trennungszeit wird Schritt für Schritt gesteigert, bis das Kind die gesamte Betreuungszeit bei uns verbringen kann.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="eltern">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Eltern</h2>
+    <p class="lead-in">Wir sehen es als großen Vertrauensbeweis, wenn Eltern ihr Kind in unsere Hände legen. Deshalb nehmen wir uns beim Kennenlernen Zeit, Räume und Konzept zu zeigen und den Vertrag in Ruhe durchzugehen. Auf Wunsch darf das Kind vorab bei uns „schnuppern“.</p>
+    <h3 class="sub">Was Eltern an uns besonders schätzen</h3>
+    <ul class="schaetzen">
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Zu zweit statt allein</b><span>Wir arbeiten seit vielen Jahren als vertrautes Team zusammen: kein Personalwechsel und hohe Verlässlichkeit.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Professionelle, schöne Räume</b><span>Ein Haus mit hochwertiger Ausstattung statt einer Privatwohnung.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Eine kleine Gruppe</b><span>Bis zu zehn Kinder, damit jedes gesehen wird.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Täglich frisch gekocht</b><span>Überwiegend vegetarisch, wenn möglich regional und in Bio-Qualität.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Rücksicht auf Essenswünsche</b><span>Wir berücksichtigen individuelle Vorlieben und Unverträglichkeiten.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Heller, offener Wickelbereich</b><span>Gewickelt wird ausschließlich von uns selbst.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Eigene Windeln</b><span>Sie bringen die Windeln Ihres Kindes mit. Stoffwindeln sind willkommen.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Kein Schlafzwang</b><span>Jedes Kind folgt seinem eigenen Rhythmus.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Bewusst gewählte Zeiten</b><span>Von 8 bis 14 Uhr, mit einer klaren pädagogischen Haltung.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Planbare Schließzeiten</b><span>Die Termine stehen früh im Jahr fest. Krankheitsbedingte Ausfälle hatten wir bisher keine.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Miteinander der Kulturen</b><span>Inklusiv und interkulturell, mit Festen verschiedener Kulturen.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Liebevolle Geburtstagsfeiern</b><span>Jedes Kind wird an seinem Ehrentag gefeiert.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Gemeinsames Obst- und Gemüsefrühstück</b><span>Getragen von den Eltern, im wöchentlichen Wechsel.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>Feste im Jahreskreis</b><span>Regelmäßige Jahreszeitenfeste stärken die Elterngemeinschaft.</span></li>
+      <li><svg aria-hidden="true"><use href="#star"/></svg><b>„Von allem das Beste“</b><span>Eine offene, herzliche Haltung gegenüber Kindern, Eltern und Kulturen.</span></li>
+    </ul>
+    <h3 class="sub">Zusammenarbeit, Feste und Gesundheit</h3>
+    <div class="cols3" style="margin-top:1.4rem">
+      <div>
+        <h3>Zusammenarbeit</h3>
+        <dl><dt>Tür-und-Angel-Gespräche</dt><dd>Täglich ein kurzer Austausch beim Bringen und Abholen.</dd><dt>Entwicklungsgespräche</dt><dd>In der Regel drei in den durchschnittlich zwei Betreuungsjahren.</dd><dt>Wohlwollende Rückmeldung</dt><dd>Fällt uns etwas auf, suchen wir zuerst das Gespräch mit den Eltern, wertschätzend und lösungsorientiert, und helfen bei der Suche nach Anlaufstellen.</dd></dl>
+      </div>
+      <div>
+        <h3>Vier Feste im Jahreskreis</h3>
+        <ul class="dots"><li>Frühlingsfest</li><li>Sommerfest</li><li>Laternenfest</li><li>Winter-Lichterfest</li></ul>
+        <p>Wir sind mitten in einem pädagogischen Umfeld: Die Tulla-Grundschule, der St. Elisabeth Kindergarten und die AWO-Kita sind ganz in der Nähe. Im Sommer gießen wir mit den Kindern den Schulgarten.</p>
+      </div>
+      <div>
+        <h3>Gut zu wissen</h3>
+        <ul class="dots"><li>Fieberfreie Kinder mit lebhaftem, fitem Eindruck können kommen, eine Schniefnase ist kein Hindernis.</li><li>Bei Fieber oder akutem Magen-Darm-Infekt ist keine Betreuung möglich. Danach muss das Kind einen Tag symptomfrei sein.</li><li>Krankmeldung bitte telefonisch bis 9 Uhr.</li><li>Wir prüfen und dokumentieren den Masernschutz.</li></ul>
+        <h3 style="margin-top:1.4rem">Qualifikation</h3>
+        <ul class="dots"><li>Qualifikation zur Tagespflegeperson beim Tagesmütterverein Freiburg</li><li>20 Fortbildungsstunden pro Jahr, vom Jugendamt eng kontrolliert</li><li>Zusatzqualifikation für erfahrene Tagespflegepersonen</li><li>Regelmäßig aufgefrischter Erste-Hilfe-Kurs am Kind</li><li>Jährliche Besuche von Tagesmütterverein und Jugendamt, Gesundheitsamt ohne Beanstandung</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec mist" id="fragen">
+  <div class="wrap">
+    <h2><svg aria-hidden="true"><use href="#star"/></svg>Typische Fragen von Eltern</h2>
+    <div class="faq">
+      <details><summary>Was ist Kindertagespflege eigentlich?</summary><p>Kindertagespflege ist eine familiennahe Betreuungsform für Kinder in den ersten Lebensjahren: eine kleine Gruppe, feste Bezugspersonen und ein überschaubarer Rahmen. Die Tagespflegepersonen sind dafür qualifiziert und werden von Tagesmütterverein und Jugendamt begleitet. Wir sind eine Großtagespflege: Zu zweit betreuen wir bis zu zehn Kinder.</p></details>
+      <details><summary>Wer betreut unser Kind, und welche Qualifikation habt ihr?</summary><p>Wir, Daniela Brekalo und Najat Zarouali. Wir haben die Qualifikation zur Tagespflegeperson beim Tagesmütterverein Freiburg absolviert und eine Zusatzqualifikation für erfahrene Tagespflegepersonen. Jedes Jahr weisen wir 20 Fortbildungsstunden nach, der Erste-Hilfe-Kurs am Kind wird regelmäßig aufgefrischt.</p></details>
+      <details><summary>Findet die Betreuung in einer Privatwohnung statt?</summary><p>Nein. Wir sind in einem freistehenden Haus an der Zähringerstraße untergebracht, mit drei Etagen und rund 200 qm. Das Haus war früher der Sitz einer Bank und ist hochwertig gebaut. Tagesmütterverein und Jugendamt besuchen und prüfen die Räume jedes Jahr.</p></details>
+      <details><summary>Wie sehen die Räume aus?</summary><p>Beim Bringen betreten Sie ein Foyer mit Garderobe, das durch Glastüren abgetrennt ist. Das macht den Abschied klarer und leichter. Der Hauptraum ist großzügig und reizarm eingerichtet, mit Platz für Bewegung und Rollenspiel. Dazu kommen ein gemütlicher Rückzugs- und Schlafraum mit Matten, Kissen, Büchern und Kuscheltieren sowie im Souterrain Küche, Kinderwaschraum und Toilette.</p></details>
+      <details><summary>Gibt es einen Garten oder Außenbereich?</summary><p>Ja, einen kleinen Garten von etwa 30 qm. Für die Draußenzeit gehen wir außerdem auf die Spielplätze im Stadtteil, in den Wald und zum Waldspielplatz, die in der Nähe liegen. Im Sommer gießen wir mit den Kindern den Schulgarten.</p></details>
+      <details><summary>Wie sieht ein typischer Tagesablauf aus?</summary><p>Um 8 Uhr kommen die Kinder an und spielen frei, um 9:15 Uhr folgt der Morgenkreis, um 9:35 Uhr das Obst- und Gemüsefrühstück. Von 10 bis 11:30 Uhr sind wir draußen, danach wird gewickelt und gekocht. Um 12 Uhr essen wir gemeinsam zu Mittag. Ab 12:30 Uhr folgen Bücher und Kreativzeit, wer müde ist, darf schlafen. Ab 13:30 Uhr räumen wir auf und verabschieden uns. Der Ablauf ist bewusst wiederkehrend, das gibt jungen Kindern Orientierung.</p></details>
+      <details><summary>Macht ihr auch Ausflüge?</summary><p>Ja, gern, am liebsten ins Naturkundemuseum, in den Botanischen Garten oder in das Tiergehege Mundenhof. Auch sonst sind wir im Sommer wie im Winter draußen. Gummistiefel und Matschanzug bleiben deshalb bei uns.</p></details>
+      <details><summary>Gibt es Essen, oder müssen wir etwas mitbringen?</summary><p>Das Mittagessen kochen wir jeden Tag frisch: saisonal, regional und in Bio-Qualität, überwiegend vegetarisch. Fleisch servieren wir nur halal. Zum Trinken gibt es Wasser oder ungesüßten Früchtetee. Mitbringen müssen Sie nur den Obstkorb, wenn Sie im Wechsel an der Reihe sind. Bitte frühstücken Sie morgens in Ruhe mit Ihrem Kind zu Hause, damit es nicht hungrig ankommt.</p></details>
+      <details><summary>Kann auf Unverträglichkeiten Rücksicht genommen werden?</summary><p>Ja, wir berücksichtigen individuelle Essenswünsche und Unverträglichkeiten. Weil wir selbst und frisch kochen, sind wir dabei flexibel. Bitte sprechen Sie uns beim Kennenlernen darauf an, dann klären wir gemeinsam, was möglich ist.</p></details>
+      <details><summary>Was hat es mit dem Obst- und Gemüsefrühstück auf sich?</summary><p>Nach dem Morgenkreis essen wir gemeinsam. Die Eltern bringen im wöchentlichen Wechsel einen bunten Korb mit saisonalem, regionalem Obst und Gemüse mit, wir schneiden es klein. Die Kinder nehmen das Angebot sehr gut an, und wir kommen dabei früh ins Gespräch über gesunde Ernährung, Vitamine und Sorten.</p></details>
+      <details><summary>Wie läuft das Wickeln?</summary><p>Der Wickelbereich ist hell und offen, gewickelt wird ausschließlich von uns selbst. Wir tragen dabei Handschuhe und desinfizieren die Auflage nach jedem Wickeln. Um 11:30 Uhr bekommt jedes Kind eine frische Windel, damit es sein Mittagessen genießen kann, sonst wickeln wir nach Bedarf. Die Windeln bringen Sie selbst mit, Stoffwindeln sind willkommen. Mit der Sauberkeitserziehung beginnen wir nach Rücksprache mit Ihnen, wenn das Kind dafür bereit ist.</p></details>
+      <details><summary>Muss mein Kind mittags schlafen?</summary><p>Nein, es gibt bei uns keinen Schlafzwang. Jedes Kind folgt seinem eigenen Rhythmus. Wer müde ist, kann ab 12:30 Uhr im Rückzugs- und Schlafraum schlafen oder sich mit Kuscheltier und Buch ausruhen. Die Betreuung endet ohnehin um 14 Uhr.</p></details>
+      <details><summary>Wie sind die Betreuungszeiten?</summary><p>Montag bis Freitag von 8 bis 14 Uhr. Ab 8 Uhr können die Kinder ankommen und frei spielen, um 9:15 Uhr beginnt der Morgenkreis. Ab 13:30 Uhr verabschieden wir uns. Direkt vor dem Haus gibt es Parkmöglichkeiten, und die Haltestellen zweier Straßenbahnlinien liegen gegenüber.</p></details>
+      <details><summary>Wie viele Schließtage gibt es?</summary><p>27 Tage Jahresurlaub, alle in den Schulferien. Wir geben die Termine Anfang November bekannt, damit Sie das ganze Jahr planen können. Krankheitsbedingte Ausfälle hatten wir bisher keine.</p></details>
+      <details><summary>Wie sieht euer pädagogisches Konzept aus?</summary><p>Jedes Kind ist einzigartig und hat sein eigenes Tempo. Im Mittelpunkt steht das beobachtete Freispiel in einer vorbereiteten, reizarmen Umgebung. Dazu kommen Bewegung, Morgenkreis und Singen, kreatives Gestalten sowie Tiere und Natur. Wir beobachten, statt zu bewerten, greifen bei Konflikten so wenig wie möglich ein und sprechen wertschätzend mit den Kindern. Mehr dazu finden Sie im Abschnitt Pädagogik.</p></details>
+      <details><summary>Was bedeutet „inklusiv“ bei euch?</summary><p>Bei uns ist jedes Kind willkommen und wird ernst genommen, mit seiner Persönlichkeit, seiner Familie und seiner Kultur. Toleranz, Akzeptanz und Respekt sind Werte, für die wir uns auch schon vor den Sternenreitern gemeinsam eingesetzt haben. Im Alltag zeigt sich das im Miteinander der Kinder, in den Festen verschiedener Kulturen und darin, dass wir auf religiöse Essgewohnheiten achten. Wir vergleichen Kinder nie miteinander.</p></details>
+      <details><summary>Welche Feste feiert ihr?</summary><p>Wir feiern vier Feste im Jahreskreis: das Frühlingsfest, das Sommerfest, das Laternenfest und das Winter-Lichterfest. Dazu kommen liebevoll gestaltete Geburtstagsfeiern. Bei den Festen kommen auch die Eltern miteinander ins Gespräch.</p></details>
+      <details><summary>Wir möchten euch kennenlernen. Wie geht es weiter?</summary><p>Schreiben Sie uns oder rufen Sie an, die Kontaktdaten finden Sie unten auf der Seite. Beim Kennenlernen zeigen wir Ihnen Räume und Konzept und gehen den Vertrag in Ruhe mit Ihnen durch. Auf Wunsch darf Ihr Kind vorab bei uns schnuppern. Danach beginnt die Eingewöhnung nach dem „Berliner Modell“, für die wir uns die Zeit nehmen, die Ihr Kind braucht.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="sec yellow" id="kontakt">
+  <div class="wrap contact">
+    <div>
+      <h2><svg aria-hidden="true"><use href="#star"/></svg>Kontakt</h2>
+      <p class="lead-in">Neugierig geworden? Wir zeigen Ihnen gern unsere Räume und unser Konzept. Schreiben oder rufen Sie uns an.</p>
+      <p><strong>Betreuungszeiten:</strong> Montag bis Freitag, 8 bis 14 Uhr</p>
+      <p>27 Tage Jahresurlaub, jeweils in den Schulferien. Wir geben die Termine Anfang November bekannt, damit Sie planen können.</p>
+    </div>
+    <div class="card">
+      <p class="big">Kindertagespflege Sternenreiter</p>
+      <p>Zähringer Str. 30<br>79108 Freiburg im Breisgau-Nord</p>
+      <p>Telefon: <a href="tel:+4976138411567">0761 38411567</a><br>E-Mail: <a href="mailto:sternenreiter-freiburg@t-online.de">sternenreiter-freiburg@t-online.de</a></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <span>© Kindertagespflege Sternenreiter, Freiburg-Zähringen</span>
+      <span><a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a></span>
+    </div>
+<section class="legal" id="impressum">
+  <h2>Impressum</h2>
+  <p><strong>Angaben nach § 5 DDG</strong> <em>(Platzhalter, bitte vervollständigen und prüfen)</em></p>
+  <p>Kindertagespflege Sternenreiter<br>Betreiberinnen: Daniela Brekalo und Najat Zarouali<br>Zähringer Str. 30<br>79108 Freiburg im Breisgau-Nord</p>
+  <p>Telefon: <a href="tel:+4976138411567">0761 38411567</a><br>E-Mail: <a href="mailto:sternenreiter-freiburg@t-online.de">sternenreiter-freiburg@t-online.de</a></p>
+</section>
+<section class="legal" id="datenschutz">
+  <h2>Datenschutz</h2>
+  <p><em>Platzhalter, bitte vervollständigen und prüfen.</em> Diese Website ist statisch. Sie setzt keine Cookies, nutzt kein Tracking und lädt keine Schriften oder Skripte von Drittanbietern. Beim Aufruf verarbeitet der Hoster (GitHub Pages) technisch notwendige Daten wie die IP-Adresse in Server-Logfiles. Ergänzen Sie hier Verantwortliche, Kontaktweg, Ihre Rechte als Betroffene und die zuständige Aufsichtsbehörde. Bitte auch ergänzen: Hinweis zu Fotos von Kindern (Einwilligung der Sorgeberechtigten).</p>
+</section>  </div>
+</footer>
+<script>
+/* Easteregg: 7x auf den gelben Stern im Kopfbereich tippen, dann geht es zur Heldenreise */
+(() => {
+  const egg = document.getElementById("egg"); if (!egg) return;
+  let n = 0, t;
+  egg.addEventListener("click", () => {
+    clearTimeout(t); n++;
+    if (n >= 7){ egg.classList.add("go"); setTimeout(() => { location.href = "heldenreise.html"; }, 700); return; }
+    egg.style.transform = `scale(${1 + n * .15}) rotate(${n * 24}deg)`;
+    t = setTimeout(() => { n = 0; egg.style.transform = ""; }, 2500);
+  });
+})();
+</script>
+</body>
+</html>
